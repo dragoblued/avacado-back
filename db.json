@@ -1,0 +1,51 @@
+{
+  "products": [
+    {
+      "id": 3,
+      "name": "kokos",
+      "time": "00.00",
+      "calories": 1245,
+      "squirrels": 10,
+      "carbohydrates": 233,
+      "fats": 24
+    },
+    {
+      "id": 3,
+      "name": "kokos",
+      "time": "00.00",
+      "calories": 1245,
+      "squirrels": 10,
+      "carbohydrates": 233,
+      "fats": 24
+    },
+    {
+      "id": "1fd75f",
+      "completed": false
+    },
+    {
+      "id": "5de797",
+      "name": "kokos",
+      "time": "00.00",
+      "calories": 1245,
+      "squirrels": 10,
+      "carbohydrates": 233,
+      "fats": 24
+    }
+  ],
+  "users": [
+    {
+      "id": "a81954",
+      "password": "x45gf"
+    },
+    {
+      "id": "f8bbb9",
+      "userName": "natali",
+      "password": "x45gf"
+    }
+  ],
+  "config": {
+    "height": 124,
+    "weight": 45,
+    "desiredResult": "+9"
+  }
+}

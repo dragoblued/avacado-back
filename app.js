@@ -1,19 +1,26 @@
 const express = require('express');
-const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const app = express();
-const productsRoutes = require('./routes/products');
+const productsRotues = require('./routes/products');
+const registrationRoutes = require('./routes/registration');
+const changeConfig = require('./routes/config');
 
-app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use('/addproducts', productsRoutes);
-app.use((err, req, res, next) => {
-	const {message} = err;
-	res.json({status: "error", message});
-});
-app.get('/', (req, res) => {
-	res.end('<p>HEllo</p>');
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  next();
 });
 
+app.use('/addproducts', productsRotues);
+app.use('/registration', registrationRoutes);
+app.use('/config', changeConfig);
+
+app.use((err, req, res, next) => {
+  const { message } = err;
+  res.json({ status: 'ERROR', message });
+});
 app.listen(8080, () => console.log('Server Start'));
