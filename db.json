@@ -2,10 +2,10 @@
   "products": [
     {
       "id": 3,
-      "name": "kokos",
+      "name": "aple",
       "time": "00.00",
       "calories": 1245,
-      "squirrels": 10,
+      "proteins": 10,
       "carbohydrates": 233,
       "fats": 24
     },
@@ -14,20 +14,7 @@
       "name": "kokos",
       "time": "00.00",
       "calories": 1245,
-      "squirrels": 10,
-      "carbohydrates": 233,
-      "fats": 24
-    },
-    {
-      "id": "1fd75f",
-      "completed": false
-    },
-    {
-      "id": "5de797",
-      "name": "kokos",
-      "time": "00.00",
-      "calories": 1245,
-      "squirrels": 10,
+      "proteins": 10,
       "carbohydrates": 233,
       "fats": 24
     }
