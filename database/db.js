@@ -9,7 +9,8 @@ db.defaults({products: [], users: [], config: {
 	"weight": 45,
 	"gender": "w",	
 	"age": 24,																																	
-	"desiredResult": "+3"
+	"desiredResult": "2",
+	"levelActive": "2",
 }}).write();
 
 module.exports = db;

@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 3,
+      "id": 1,
       "name": "aple",
       "time": "00.00",
       "calories": 1245,
@@ -10,7 +10,7 @@
       "fats": 24
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "kokos",
       "time": "00.00",
       "calories": 1245,
@@ -31,8 +31,11 @@
     }
   ],
   "config": {
-    "height": 124,
-    "weight": 45,
-    "desiredResult": "+9"
+    "gender": "w",
+    "age": "23",
+    "height": "156",
+    "weight": "46",
+    "desiredResult": "0",
+    "levelActive": "0"
   }
 }
