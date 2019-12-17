@@ -1,22 +1,22 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "aple",
-      "time": "00.00",
-      "calories": 1245,
-      "proteins": 10,
-      "carbohydrates": 233,
-      "fats": 24
+      "id": "455c11",
+      "name": "apple",
+      "time": "23:1",
+      "calories": 52,
+      "proteins": 0.52,
+      "fats": 0.26153846153846155,
+      "carbohydrates": 4.6033333333333335
     },
     {
-      "id": 2,
-      "name": "kokos",
-      "time": "00.00",
-      "calories": 1245,
-      "proteins": 10,
-      "carbohydrates": 233,
-      "fats": 24
+      "id": "2126fc",
+      "name": " buckwheat",
+      "time": "23:27",
+      "calories": 1029,
+      "proteins": 79.5,
+      "fats": 15.69230769230769,
+      "carbohydrates": 71.5
     }
   ],
   "users": [
@@ -34,8 +34,8 @@
     "gender": "w",
     "age": "23",
     "height": "156",
-    "weight": "46",
-    "desiredResult": "0",
+    "weight": "45",
+    "desiredResult": "1",
     "levelActive": "0"
   }
 }

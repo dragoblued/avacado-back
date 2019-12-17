@@ -27,19 +27,29 @@ const getProduct = (req, res, next) => {
   res.json({ status: 'OK', data: product });
 }
 
+const editProduct= (req, res, next) => {
+  const editedProduct = db
+    .get('products')
+    .assign(req.body)
+    .value();
+
+  db.write();
+  res.json({ status: 'OK', data: editedProduct });
+};
 
 const createProduct = (req, res, next) => {
   const productSchema = {
     type: 'object',
     properties: {
+      id: {type: 'string'},
       name : {type: 'string'},
   		time : {type: 'string'},
-  		calories : {type: 'integer'},
-  		squirrels : {type: 'integer'},
-  		carbohydrates : {type: 'integer'},
-  		fats : {type: 'integer'}
+  		calories : {type: 'number'},
+  		proteins : {type: 'number'},
+  		fats : {type: 'number'},
+      carbohydrates : {type: 'number'},
     },
-    required: ['name', 'time', 'calories', 'squirrels', 'carbohydrates', 'fats'],
+    required: ['id', 'name', 'time', 'calories','fats', 'proteins', 'carbohydrates'],
     additionalProperties: false
   };
 
@@ -48,15 +58,15 @@ const createProduct = (req, res, next) => {
     throw new Error('INVALID_JSON_OR_API_FORMAT');
   }
 
-  const { name, time, calories, squirrels, carbohydrates, fats } = req.body;
+  const {id, name, time, calories, proteins, fats, carbohydrates } = req.body;
   const product = {
-    id: shortid.generate(),
+    id,
     name,
     time,
     calories,
-    squirrels,
-    carbohydrates,
-    fats
+    proteins,
+    fats,
+    carbohydrates
   };
 
   try {
@@ -75,7 +85,7 @@ const createProduct = (req, res, next) => {
 
 const deleteProduct = (req, res, next) => {
   db.get('products')
-    .remove({ id: req.params.id })
+    .remove({ id: req.body.id })
     .write();
 
   res.json({ status: 'OK' });
@@ -85,5 +95,6 @@ module.exports = {
 	getProducts,
 	getProduct,
 	createProduct,
-	deleteProduct
+	deleteProduct,
+  editProduct,
 }
