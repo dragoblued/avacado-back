@@ -1,31 +1,31 @@
-const shortid = require('short-id');
-const { validate } = require('jsonschema');
-const db = require('../database/db');
+const shortid = require("short-id");
+const { validate } = require("jsonschema");
+const db = require("../database/db");
 
 const getUsers = (req, res, next) => {
-	let users = [];
-	try {
-		users= db.get('users');
-	} catch (error) {
-		throw new Error(error);
-	}
-	res.json({status: 'OK', data: users});
-}
+  let users = [];
+  try {
+    users = db.get("users");
+  } catch (error) {
+    throw new Error(error);
+  }
+  res.json({ status: "OK", data: users });
+};
 
 const createUser = (req, res, next) => {
-	const userSchema= {
-    type: 'object',
+  const userSchema = {
+    type: "object",
     properties: {
-    userName : {type: 'string'},
-		password : {type: 'string'},
+      userName: { type: "string" },
+      password: { type: "string" }
     },
-    required: ['userName', 'password'],
+    required: ["userName", "password"],
     additionalProperties: false
   };
 
   const validationResult = validate(req.body, userSchema);
   if (!validationResult.valid) {
-    throw new Error('INVALID_JSON_OR_API_FORMAT');
+    throw new Error("INVALID_JSON_OR_API_FORMAT");
   }
   const { userName, password } = req.body;
   const user = {
@@ -35,7 +35,7 @@ const createUser = (req, res, next) => {
   };
 
   try {
-    db.get('users')
+    db.get("users")
       .push(user)
       .write();
   } catch (error) {
@@ -43,12 +43,12 @@ const createUser = (req, res, next) => {
   }
 
   res.json({
-    status: 'OK',
+    status: "OK",
     data: user
   });
 };
 
 module.exports = {
-	createUser,
-	getUsers
-}
+  createUser,
+  getUsers
+};

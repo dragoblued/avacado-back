@@ -1,16 +1,20 @@
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
 
-const adapter = new FileSync('db.json');
+const adapter = new FileSync("db.json");
 const db = low(adapter);
 
-db.defaults({products: [], users: [], config: {
-	"height": 156,
-	"weight": 45,
-	"gender": "w",	
-	"age": 24,																																	
-	"desiredResult": "2",
-	"levelActive": "2",
-}}).write();
+db.defaults({
+  products: [],
+  users: [],
+  config: {
+    height: 156,
+    weight: 45,
+    gender: "w",
+    age: 24,
+    desiredResult: "2",
+    levelActive: "2"
+  }
+}).write();
 
 module.exports = db;
